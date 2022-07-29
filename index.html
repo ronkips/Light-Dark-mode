@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <html data-theme="dark"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <LINK REL=StyleSheet HREF="style.css" TYPE="text/css">
+        <script type="text/javascript">
+            // Wait for document to load
+            document.addEventListener("DOMContentLoaded", function(event) {
+              document.documentElement.setAttribute("data-theme", "light");
+          
+              // Get our button switcher
+              var themeSwitcher = document.getElementById("theme-switcher");
+          
+              // When our button gets clicked
+              themeSwitcher.onclick = function() {
+                // Get the current selected theme, on the first run
+                // it should be `light`
+                var currentTheme = document.documentElement.getAttribute("data-theme");
+          
+                // Switch between `dark` and `light`
+                var switchToTheme = currentTheme === "dark" ? "light" : "dark"
+          
+                // Set our currenet theme to the new one
+                document.documentElement.setAttribute("data-theme", switchToTheme);
+              }
+            });
+          </script>
+</head>
+<body>
+    <h1>Adding light/dark themes</h1>
+    <button id="theme-switcher">Switch themes!</button>
+</body>
+</html>
